@@ -1,0 +1,47 @@
+.main-con{
+    background-color: hsl(0, 0%, 100%);
+}
+.con-1{
+    background-color: hsl(223, 19%, 93%);
+}
+span,input,img{
+    cursor:pointer;
+}
+.sendBtn{
+    background-color: hsl(238, 40%, 52%);
+    color: hsl(0, 0%, 100%);
+}
+
+textarea{
+    resize: none;
+    border: 1px solid #C5C6EF;
+}
+.hoverElements:hover{
+    color: aquamarine;
+}
+button:hover{
+    opacity: 0.4;
+}
+.replyIcon:hover{
+    opacity: 0.4;
+}
+.deleteIcon:hover{
+    opacity: 0.4;
+}
+.editIcon:hover{
+    opacity: 0.4;
+}
+.editStyle{
+    background-color:yellowgreen;
+}
+.editStyle2{
+    background-color:blue;
+
+}
+#reply{
+    margin-top: 0.75rem;
+}
+#replyA{
+    margin-top: 0.75rem;
+    border: 1px black solid;
+}
