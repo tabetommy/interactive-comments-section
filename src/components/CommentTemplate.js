@@ -4,10 +4,10 @@ import iconReply from "../images/icon-reply.svg"
 import iconPlus from "../images/icon-plus.svg"
 import iconMinus from "../images/icon-minus.svg"
 
-// amyRobsonData=usersData.comments[0]
 
 const CommentTemplate=({amyRobsonData,handleShowCon})=>{
     const [count, setCount]=useState(amyRobsonData.score);
+    
     
     //handle upvoting and downvoting of comment
     const increment=()=>setCount(prevcount=>prevcount+1);

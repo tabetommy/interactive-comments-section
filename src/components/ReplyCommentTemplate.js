@@ -1,22 +1,23 @@
 import React,{useState} from "react";
+import axios from "axios";
 
-const ReplyCommentTemplate=({juliosomoImg,amyRobson})=>{
+const ReplyCommentTemplate=({juliosomoImg,amyRobson, handleReply})=>{
+
+    const baseUrl=`https://tt-interactive-comments.herokuapp.com/users/${amyRobson}`;
 
     const [text,setText]=useState(`@${amyRobson},`);
-    const [replies,setReplies]=useState([])
+    // const [replies,setReplies]=useState([]);
+
     const handleChange = (event) => {
         setText(event.target.value)
     };
 
     const handleSubmit=(event)=>{
-        //send post api call here
-        //reload page
-        //send get request and fill replies state
         event.preventDefault();
-        // setShowReplyCon(false);
-        setReplies([...replies,text]);
-        setText(`@${amyRobson},`);
-        console.log(replies)
+        axios.post(baseUrl,{comment:text})
+        .then(response=>response.data)
+        .catch(error=>console.log(error));
+        window.location.reload(false);
     }
     return(
         <div className="bg-white flex-row md:flex justify-around items-start  w-4/5 mx-auto rounded-lg pb-4">
