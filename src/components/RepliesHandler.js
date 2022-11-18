@@ -6,9 +6,9 @@ import iconMinus from "../images/icon-minus.svg";
 //import ViewTemplate from './ViewTemplate';
 //import EditingTemplate from './EditingTemplate';
 
-const RepliesHandler=({repliesram,usersData3,updateRepliesram})=>{
+const RepliesHandler=({repliesram,usersDataThree,updateRepliesram})=>{
     
-    const [count2, setCount2]=useState(usersData3.comments[1].replies[1].score);
+    const [count2, setCount2]=useState(usersDataThree.comments[1].replies[1].score);
     const [disable,setDisable]=useState(false);
     //const [style,setStyle]=useState("editStyle")
     const [newText,setNewText]=useState(repliesram.tex)
@@ -52,10 +52,10 @@ const RepliesHandler=({repliesram,usersData3,updateRepliesram})=>{
             <div className="flex justify-between">
                 <div className="flex items-center pt-4">
                     <span className="w-10">
-                        <img src={usersData3.comments[1].replies[1].user.image.png} alt="juliosomo" />
+                        <img src={usersDataThree.comments[1].replies[1].user.image.png} alt="juliosomo" />
                     </span>
-                    <span className="px-5">{usersData3.comments[1].replies[1].user.username}</span>
-                    <span>{usersData3.comments[1].replies[1].createdAt}</span>
+                    <span className="px-5">{usersDataThree.comments[1].replies[1].user.username}</span>
+                    <span>{usersDataThree.comments[1].replies[1].createdAt}</span>
                 </div>
                 <div className="hidden md:flex items-center mr-4">
                     <div className='deleteIcon flex items-center'>
@@ -123,10 +123,10 @@ const RepliesHandler=({repliesram,usersData3,updateRepliesram})=>{
             <div className="flex justify-between">
                 <div className="flex items-center pt-4">
                     <span className="w-10">
-                        <img src={usersData3.comments[1].replies[1].user.image.png} alt="juliosomo" />
+                        <img src={usersDataThree.comments[1].replies[1].user.image.png} alt="juliosomo" />
                     </span>
-                    <span className="px-5">{usersData3.comments[1].replies[1].user.username}</span>
-                    <span>{usersData3.comments[1].replies[1].createdAt}</span>
+                    <span className="px-5">{usersDataThree.comments[1].replies[1].user.username}</span>
+                    <span>{usersDataThree.comments[1].replies[1].createdAt}</span>
                 </div>
                 <div className="hidden md:flex items-center mr-4">
                     <div className='deleteIcon flex items-center'>

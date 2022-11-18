@@ -8,15 +8,6 @@ import { v4 as uuidv4 } from 'uuid';
 import RepliesHandler from './RepliesHandler';
 
 
-
-//map the entire julio replies
-//in map change only the content to replies.
-//enable div
-//create update button
-//update button should disable div
-//change style onclick
-//show button onclick
-
 const Replies=({usersDataThree,repliesmax})=>{
     const [count1, setCount1]=useState(usersDataThree.comments[1].replies[0].score);
     

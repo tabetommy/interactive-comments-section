@@ -1,11 +1,9 @@
 import React,{useState, useEffect} from "react";
 import ReplyCommentTemplate from "./ReplyCommentTemplate";
 import CommentTemplate from "./CommentTemplate";
+import JulioReplyTemplate from "./JulioReplytemplate";
 import axios from "axios";
-//the reply button show have a function
-//that make the div disapperar while 
-//the reply appears under therefore shifting up
-//put the response in an array that you map
+
 
 
 
@@ -17,20 +15,19 @@ const FirstComment=({usersData})=>{
     useEffect(()=>{
         axios.get(`https://tt-interactive-comments.herokuapp.com/users/${usersData.comments[0].user.username}`)
         .then(response=>setReply(response.data.comment))
-        .catch(error=>console.log(error))
-    })
+        .catch(error=>console.log(error));
+        // console.log(text)
+    },[]);
 
      //show the reply container
      const handleShowCon=()=>{
         return(setShowReplyCon(!showReplyCon))
     };
-
-   
-
+     
     return(
         <div>
             <CommentTemplate 
-            amyRobsonData={usersData.comments[0]}
+            user={usersData.comments[0]}
             handleShowCon={handleShowCon}
             />
             {showReplyCon?
@@ -40,7 +37,11 @@ const FirstComment=({usersData})=>{
             />
             :
             null}
-            <div>{reply}</div>
+            {reply && <JulioReplyTemplate 
+            usersDataThree={usersData}
+            reply={reply}
+            handleSetReply={setReply}
+            />}
         </div>       
     )
 }

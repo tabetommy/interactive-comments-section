@@ -5,8 +5,8 @@ import iconPlus from "../images/icon-plus.svg"
 import iconMinus from "../images/icon-minus.svg"
 
 
-const CommentTemplate=({amyRobsonData,handleShowCon})=>{
-    const [count, setCount]=useState(amyRobsonData.score);
+const CommentTemplate=({user,handleShowCon})=>{
+    const [count, setCount]=useState(user.score);
     
     
     //handle upvoting and downvoting of comment
@@ -24,10 +24,10 @@ const CommentTemplate=({amyRobsonData,handleShowCon})=>{
                     <div className="flex justify-between pt-4">
                         <div className="flex items-center">
                             <span className="w-10">
-                                <img src={amyRobsonData.user.image.png} alt="amyrobson" />
+                                <img src={user.user.image.png} alt="amyrobson" />
                             </span>
-                            <span className="px-5">{amyRobsonData.user.username}</span>
-                            <span>{amyRobsonData.createdAt}</span>
+                            <span className="px-5">{user.user.username}</span>
+                            <span>{user.createdAt}</span>
                         </div>
                         <div className="replyIcon hidden md:flex items-center mr-4">
                             <span className="px-2" onClick={handleShowCon}><img src={iconReply} alt="icon-reply"/></span>
@@ -36,7 +36,7 @@ const CommentTemplate=({amyRobsonData,handleShowCon})=>{
                     </div>
 
                     <div className="mt-3">
-                        {amyRobsonData.content}
+                        {user.content}
                     </div>              
                 </div>  
                 <div className="flex justify-between md:hidden w-4/5 mx-auto pb-4">

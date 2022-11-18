@@ -1,12 +1,12 @@
 import React,{useState} from "react";
 import axios from "axios";
 
-const ReplyCommentTemplate=({juliosomoImg,amyRobson, handleReply})=>{
+const ReplyCommentTemplate=({juliosomoImg,amyRobson})=>{
 
-    const baseUrl=`https://tt-interactive-comments.herokuapp.com/users/${amyRobson}`;
+    const url=`https://tt-interactive-comments.herokuapp.com/users/${amyRobson}`;
 
     const [text,setText]=useState(`@${amyRobson},`);
-    // const [replies,setReplies]=useState([]);
+
 
     const handleChange = (event) => {
         setText(event.target.value)
@@ -14,10 +14,13 @@ const ReplyCommentTemplate=({juliosomoImg,amyRobson, handleReply})=>{
 
     const handleSubmit=(event)=>{
         event.preventDefault();
-        axios.post(baseUrl,{comment:text})
-        .then(response=>response.data)
+        axios.post(url,{comment:text})
+        .then((response)=>{
+           console.log( response.data); 
+            window.location.reload();
+        })
         .catch(error=>console.log(error));
-        window.location.reload(false);
+        
     }
     return(
         <div className="bg-white flex-row md:flex justify-around items-start  w-4/5 mx-auto rounded-lg pb-4">
