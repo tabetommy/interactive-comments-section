@@ -1,11 +1,11 @@
 import React,{useState} from "react";
 import axios from "axios";
 
-const ReplyCommentTemplate=({juliosomoImg,amyRobson})=>{
+const ReplyCommentTemplate=({juliosomoImg,username})=>{
 
-    const url=`https://tt-interactive-comments.herokuapp.com/users/${amyRobson}`;
+    const url=`https://tt-interactive-comments.herokuapp.com/users/${username}`;
 
-    const [text,setText]=useState(`@${amyRobson},`);
+    const [text,setText]=useState(`@${username},`);
 
 
     const handleChange = (event) => {

@@ -33,7 +33,7 @@ const FirstComment=({usersData})=>{
             {showReplyCon?
             <ReplyCommentTemplate 
             juliosomoImg={usersData.currentUser.image.png}
-            amyRobson={usersData.comments[0].user.username}
+            username={usersData.comments[0].user.username}
             />
             :
             null}

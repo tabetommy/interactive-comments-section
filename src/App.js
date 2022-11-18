@@ -8,7 +8,7 @@ function App() {
   return (
     <div className='app'>
       <FirstComment usersData={users} />
-      <SecondComment usersDataTwo={users} />
+      <SecondComment usersData={users} />
       <AddComment currentUser={users.currentUser} />
     </div>
   );
