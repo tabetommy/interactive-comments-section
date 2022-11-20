@@ -5,7 +5,7 @@ import iconPlus from "../images/icon-plus.svg"
 import iconMinus from "../images/icon-minus.svg"
 
 
-const CommentTemplate=({user,handleShowCon})=>{
+const CommentTemplate=({user,handleShowCon,commentStyle})=>{
     const [count, setCount]=useState(user.score);
     
     
@@ -14,7 +14,7 @@ const CommentTemplate=({user,handleShowCon})=>{
     const decrement=()=>setCount(prevcount=>prevcount-1);
 
     return(
-        <section className="main-con flex-row md:flex justify-around items-center w-4/5 mx-auto rounded-lg mt-7 mb-1.5" >
+        <section className={commentStyle} >
                 <div className="con-1 hidden md:block w-auto px-3 py-3 mx-4 rounded-lg">
                     <div onClick={increment}><img className="hoverElements" src={iconPlus} alt="icon-plus"/></div>
                     <div className="py-2 text-blue-800 cursor-pointer">{count}</div>

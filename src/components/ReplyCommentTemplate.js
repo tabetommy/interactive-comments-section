@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import axios from "axios";
 
-const ReplyCommentTemplate=({juliosomoImg,username})=>{
+const ReplyCommentTemplate=({juliosomoImg,username,replyStyle})=>{
 
     const url=`https://tt-interactive-comments.herokuapp.com/users/${username}`;
 
@@ -23,7 +23,7 @@ const ReplyCommentTemplate=({juliosomoImg,username})=>{
         
     }
     return(
-        <div className="bg-white flex-row md:flex justify-around items-start  w-4/5 mx-auto rounded-lg pb-4">
+        <div className={replyStyle}>
                 <img className="hidden md:block ml-2 mt-5" src={juliosomoImg} alt="juliosomo"/>
                     <form className='md:flex justify-between items-start w-11/12 mx-auto rounded-lg'>
                         <textarea 
