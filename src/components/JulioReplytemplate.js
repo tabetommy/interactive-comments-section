@@ -71,13 +71,13 @@ const JulioReplyTemplate=({usersDataThree,reply,handleSetReply})=>{
                                 <span>{usersDataThree.comments[1].replies[1].createdAt}</span>
                             </div>
                             <div className="hidden md:flex items-center mr-4">
-                                <div className='deleteIcon flex items-center'>
+                                <div className='deleteIcon flex items-center' onClick={handleDelete}>
                                     <span className="px-2"><img src={iconDelete} alt="icon-reply"/></span>
-                                    <span onClick={handleDelete}>Delete</span>
+                                    <span>Delete</span>
                                 </div>
-                                <div className='editIcon flex items-center'>
+                                <div className='editIcon flex items-center' onClick={handleEditView}>
                                     <span className="px-2"><img src={iconEdit} alt="icon-reply"/></span>
-                                    <span onClick={handleEditView}>Edit</span>
+                                    <span>Edit</span>
                                 </div>
                             </div>
                             </div>
@@ -101,13 +101,13 @@ const JulioReplyTemplate=({usersDataThree,reply,handleSetReply})=>{
                             <div onClick={decrement1}><img src={iconMinus} alt="icon-minus"/></div>
                         </div>
                         <div className='flex'> 
-                            <div className='deleteIcon flex items-center'>
+                            <div className='deleteIcon flex items-center' onClick={handleDelete}>
                                 <span className="px-2"><img src={iconDelete} alt="icon-reply" /></span>
-                                <span onClick={handleDelete}>Delete</span>
+                                <span >Delete</span>
                             </div>
-                            <div className='editIcon flex items-center'>
+                            <div className='editIcon flex items-center' onClick={handleEditView}>
                                 <span className="px-2"><img src={iconEdit} alt="icon-reply" /></span>
-                                <span onClick={handleEditView}>Edit</span>
+                                <span >Edit</span>
                             </div>
                         </div>    
                     </div>          

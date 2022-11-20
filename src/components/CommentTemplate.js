@@ -29,8 +29,8 @@ const CommentTemplate=({user,handleShowCon,commentStyle})=>{
                             <span className="px-5">{user.user.username}</span>
                             <span>{user.createdAt}</span>
                         </div>
-                        <div className="replyIcon hidden md:flex items-center mr-4">
-                            <span className="px-2" onClick={handleShowCon}><img src={iconReply} alt="icon-reply"/></span>
+                        <div className="replyIcon hidden md:flex items-center mr-4" onClick={handleShowCon}>
+                            <span className="px-2"><img src={iconReply} alt="icon-reply"/></span>
                             <span>Reply</span>
                         </div>
                     </div>
@@ -45,8 +45,8 @@ const CommentTemplate=({user,handleShowCon,commentStyle})=>{
                         <div className="mx-2">{count}</div>
                         <div onClick={decrement}><img src={iconMinus} alt="icon-minus"/></div>
                     </div>
-                    <div className="replyIcon flex items-center">
-                        <span className="px-2" onClick={handleShowCon}><img src={iconReply} alt="icon-reply"/></span>
+                    <div className="replyIcon flex items-center" onClick={handleShowCon}>
+                        <span className="px-2"><img src={iconReply} alt="icon-reply"/></span>
                         <span>Reply</span>
                     </div>
                 </div>                   
