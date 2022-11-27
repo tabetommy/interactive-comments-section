@@ -4,6 +4,9 @@ import  "./style.css";
 import CommentTemplate from "./CommentTemplate";
 import ReplyCommentTemplate from "./ReplyCommentTemplate";
 import SecondReplyTemplate from "./SecondReplyTemplate";
+import maxImage from "../images/avatars/image-maxblagun.png";
+import juliuImage from "../images/avatars/image-juliusomo.png";
+
 
 
 const SecondComment=({usersData})=>{
@@ -34,12 +37,14 @@ const SecondComment=({usersData})=>{
             user={usersData.comments[1]}
             handleShowCon={handleShowCon}
             commentStyle={commentStyle}
+            img={maxImage}
             />
             {showReplyCon?
             <ReplyCommentTemplate 
             juliosomoImg={usersData.currentUser.image.png}
             username={usersData.comments[1].user.username}
             replyStyle={replyStyle}
+            img={juliuImage}
             />
             :
             null}

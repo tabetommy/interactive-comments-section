@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 import  "./style.css";
 import axios from 'axios';
+import juliuImage from "../images/avatars/image-juliusomo.png";
 
 const AddComment=({currentUser})=>{  
 
@@ -24,7 +25,7 @@ const AddComment=({currentUser})=>{
 
     return(
         <div className="bg-white flex-row md:flex justify-around items-start  w-4/5 mx-auto rounded-lg mt-7">
-          <img className="hidden md:block ml-2 mt-5" src={currentUser.image.png} alt="juliosomo"/>
+          <img className="hidden md:block ml-2 mt-5" src={juliuImage} alt="juliosomo"/>
           <form className='md:flex justify-between items-start w-11/12 mx-auto rounded-lg'>
             <textarea 
                 className='my-5 w-full md:w-11/12 mx-auto md:mx-2 px-3 rounded-lg'
@@ -33,7 +34,7 @@ const AddComment=({currentUser})=>{
                 placeholder='Add a comment...'
                 onChange={handleChange}></textarea>
             <div className='flex justify-between md:hidden w-full pb-3'>
-              <img className="w-12 ml-2 mt-5" src={currentUser.image.png} alt="juliosomo"/>
+              <img className="w-12 ml-2 mt-5" src={juliuImage} alt="juliosomo"/>
               <button className='sendBtn rounded-lg px-6 py-3 mr-2 mt-5' onClick={handleSubmit}>SEND</button>
             </div>
             <button 

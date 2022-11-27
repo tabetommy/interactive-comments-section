@@ -3,6 +3,8 @@ import ReplyCommentTemplate from "./ReplyCommentTemplate";
 import CommentTemplate from "./CommentTemplate";
 import JulioReplyTemplate from "./JulioReplytemplate";
 import axios from "axios";
+import amyImage from "../images/avatars/image-amyrobson.png";
+import juliuImage from "../images/avatars/image-juliusomo.png";
 
 
 
@@ -33,12 +35,14 @@ const FirstComment=({usersData})=>{
             user={usersData.comments[0]}
             handleShowCon={handleShowCon}
             commentStyle={commentStyle}
+            img={amyImage}
             />
             {showReplyCon?
             <ReplyCommentTemplate 
             juliosomoImg={usersData.currentUser.image.png}
             username={usersData.comments[0].user.username}
             replyStyle={replyStyle}
+            img={juliuImage}
             />
             :
             null}
@@ -46,6 +50,7 @@ const FirstComment=({usersData})=>{
             usersDataThree={usersData}
             reply={reply}
             handleSetReply={setReply}
+            img={juliuImage}
             />}
         </div>       
     )

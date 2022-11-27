@@ -2,6 +2,8 @@ import React,{useState} from "react";
 import SomoReply from "./SomoReply";
 import ReplyCommentTemplate from "./ReplyCommentTemplate";
 import CommentTemplate from "./CommentTemplate";
+import juliuImage from "../images/avatars/image-juliusomo.png";
+import ramImage from "../images/avatars/image-ramsesmiron.png";
 
 const SecondReplyTemplate=({usersData,reply, handleReply,juliosomoImg,username})=>{
 
@@ -26,11 +28,13 @@ const SecondReplyTemplate=({usersData,reply, handleReply,juliosomoImg,username})
                 handleShowCon={handleShow}
                 commentStyle={commentStyle}
                 user={usersData[0]}
+                img={ramImage}
                 />
                 {show?<ReplyCommentTemplate 
                 juliosomoImg={juliosomoImg}
                 username={username}
                 replyStyle={replyStyle}
+                img={juliuImage}
                 />:null}
                 <SomoReply 
                 usersData={usersData}
@@ -38,6 +42,7 @@ const SecondReplyTemplate=({usersData,reply, handleReply,juliosomoImg,username})
                 username={'ramsesmiron'}
                 handleResponse={setResponse}
                 somoReplyStyle={somoReplyStyle}
+                img={juliuImage}
                 />
                 {reply && <SomoReply
                     usersData={usersData}
@@ -45,6 +50,7 @@ const SecondReplyTemplate=({usersData,reply, handleReply,juliosomoImg,username})
                     username={'maxblagun'}
                     handleResponse={handleReply}
                     somoReplyStyle={somoReplyStyle}
+                    img={juliuImage}
                 />}
             </div>
         </div>

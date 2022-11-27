@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import axios from "axios";
 
-const ReplyCommentTemplate=({juliosomoImg,username,replyStyle})=>{
+const ReplyCommentTemplate=({juliosomoImg,username,replyStyle, img})=>{
 
     const url=`https://tt-interactive-comments.herokuapp.com/users/${username}`;
 
@@ -24,8 +24,8 @@ const ReplyCommentTemplate=({juliosomoImg,username,replyStyle})=>{
     }
     return(
         <div className={replyStyle}>
-                <img className="hidden md:block ml-2 mt-5" src={juliosomoImg} alt="juliosomo"/>
-                    <form className='md:flex justify-between items-start w-11/12 mx-auto rounded-lg'>
+                <img className="hidden md:block ml-2 mt-5" src={img} alt="juliosomo"/>
+                    <div className='md:flex justify-between items-start w-11/12 mx-auto rounded-lg'>
                         <textarea 
                             className='mt-5 w-full md:w-11/12 mx-auto md:mx-2 px-3 rounded-lg'
                             value={text} 
@@ -34,7 +34,7 @@ const ReplyCommentTemplate=({juliosomoImg,username,replyStyle})=>{
                         >
                         </textarea>
                         <div className='flex justify-between md:hidden w-full'>
-                            <img className="w-12 ml-2 mt-5" src={juliosomoImg} alt="juliosomo"/>
+                            <img className="w-12 ml-2 mt-5" src={img} alt="juliosomo"/>
                             <button className='sendBtn rounded-lg px-6 py-3 mr-2 mt-5' onClick={handleSubmit}>REPLY</button>
                         </div>
                         <button className='sendBtn hidden md:block md:w-24 rounded-lg px-6 py-3 mr-2 mt-5 '
@@ -42,7 +42,7 @@ const ReplyCommentTemplate=({juliosomoImg,username,replyStyle})=>{
                         >
                             REPLY
                         </button>
-                    </form>
+                    </div>
             </div>
    
     )

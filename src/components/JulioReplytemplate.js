@@ -7,7 +7,7 @@ import iconEdit from "../images/icon-edit.svg";
 import axios from "axios";
 
 
-const JulioReplyTemplate=({usersDataThree,reply,handleSetReply})=>{
+const JulioReplyTemplate=({usersDataThree,reply,handleSetReply, img})=>{
     const [count1, setCount]=useState(0);
     const [showUpdateBtn, setShowUpdateBtn]=useState(false);
     // const [updatedComment,setUpdatedComment]=useState("");
@@ -55,7 +55,7 @@ const JulioReplyTemplate=({usersDataThree,reply,handleSetReply})=>{
             <div className="absolute inset-y-0 left-0 md:left-16 border-r-2 border-solid border-color1">
             </div>
             <div className='w-4/5'>
-                <section className="flex-row md:flex justify-around items-center w-full mr-24 rounded-lg bg-white mt-9">
+                <div className="flex-row md:flex justify-around items-center w-full mr-24 rounded-lg bg-white mt-9">
                     <div className="con-1 hidden md:block w-auto px-3 py-3 mx-4 rounded-lg">
                         <div onClick={increment1}><img src={iconPlus} alt="icon-plus"/></div>
                         <div className="py-2">{count1}</div>
@@ -65,7 +65,7 @@ const JulioReplyTemplate=({usersDataThree,reply,handleSetReply})=>{
                         <div className="flex justify-between">
                             <div className="flex items-center pt-4">
                                 <span className="w-10">
-                                    <img src={usersDataThree.comments[1].replies[1].user.image.png} alt="juliosomo" />
+                                    <img src={img} alt="juliosomo" />
                                 </span>
                                 <span className="px-5">{usersDataThree.comments[1].replies[1].user.username}</span>
                                 <span>{usersDataThree.comments[1].replies[1].createdAt}</span>
@@ -111,7 +111,7 @@ const JulioReplyTemplate=({usersDataThree,reply,handleSetReply})=>{
                             </div>
                         </div>    
                     </div>          
-                </section>
+                </div>
             </div>
         </div>
     )

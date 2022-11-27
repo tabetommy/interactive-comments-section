@@ -5,7 +5,7 @@ import iconDelete from "../images/icon-delete.svg";
 import iconEdit from "../images/icon-edit.svg";
 import axios from 'axios';
 
-const SomoReply=({usersData, julioResponse, username, handleResponse,somoReplyStyle })=>{
+const SomoReply=({usersData, julioResponse, username, handleResponse,somoReplyStyle, img })=>{
     const [count, setCount]=useState(usersData[1].score);
     const [showUpdateBtn, setShowUpdateBtn]=useState(false);
     //declaring ref
@@ -47,7 +47,7 @@ const SomoReply=({usersData, julioResponse, username, handleResponse,somoReplySt
     }
 
     return(
-        <section className={somoReplyStyle}>
+        <div className={somoReplyStyle}>
                     <div className="con-1 hidden md:block w-auto px-3 py-3 mx-4 rounded-lg">
                         <div onClick={increment}><img src={iconPlus} alt="icon-plus"/></div>
                         <div className="py-2">{count}</div>
@@ -57,7 +57,7 @@ const SomoReply=({usersData, julioResponse, username, handleResponse,somoReplySt
                         <div className="flex justify-between">
                             <div className="flex items-center pt-4">
                                 <span className="w-10">
-                                    <img src={usersData[1].user.image.png} alt="juliosomo" />
+                                    <img src={img} alt="juliosomo" />
                                 </span>
                                 <span className="px-5">{usersData[1].user.username}</span>
                                 <span>{usersData[1].createdAt}</span>
@@ -103,7 +103,7 @@ const SomoReply=({usersData, julioResponse, username, handleResponse,somoReplySt
                             </div>
                         </div>    
                     </div>          
-                </section>
+                </div>
     )
 }
 

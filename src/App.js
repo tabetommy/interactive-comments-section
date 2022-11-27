@@ -6,6 +6,7 @@ import SecondComment from './components/SecondComment';
 import AddComment from './components/AddComment';
 import SomoReply from './components/SomoReply';
 import axios from "axios";
+import juliuImage from "./images/avatars/image-juliusomo.png";
 
 //in somoreply change only content ad days, add it to database and api, count???
 
@@ -32,6 +33,7 @@ function App() {
       usersData={users.comments[1].replies}
       somoReplyStyle={somoReplyStyle}
       username={users.currentUser.username}
+      img={juliuImage}
       />}
       <AddComment currentUser={users.currentUser} />
     </div>

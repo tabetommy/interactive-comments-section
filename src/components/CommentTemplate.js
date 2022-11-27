@@ -1,20 +1,23 @@
 import React,{useState} from "react";
 import  "./style.css";
-import iconReply from "../images/icon-reply.svg"
-import iconPlus from "../images/icon-plus.svg"
-import iconMinus from "../images/icon-minus.svg"
+import iconReply from "../images/icon-reply.svg";
+import iconPlus from "../images/icon-plus.svg";
+import iconMinus from "../images/icon-minus.svg";
 
 
-const CommentTemplate=({user,handleShowCon,commentStyle})=>{
+const CommentTemplate=({user,handleShowCon,commentStyle,img})=>{
     const [count, setCount]=useState(user.score);
     
     
     //handle upvoting and downvoting of comment
-    const increment=()=>setCount(prevcount=>prevcount+1);
+    const increment=()=>{
+        setCount(prevcount=>prevcount+1);
+        console.log(user.user.image.png)
+    };
     const decrement=()=>setCount(prevcount=>prevcount-1);
 
     return(
-        <section className={commentStyle} >
+        <div className={commentStyle} >
                 <div className="con-1 hidden md:block w-auto px-3 py-3 mx-4 rounded-lg">
                     <div onClick={increment}><img className="hoverElements" src={iconPlus} alt="icon-plus"/></div>
                     <div className="py-2 text-blue-800 cursor-pointer">{count}</div>
@@ -24,7 +27,7 @@ const CommentTemplate=({user,handleShowCon,commentStyle})=>{
                     <div className="flex justify-between pt-4">
                         <div className="flex items-center">
                             <span className="w-10">
-                                <img src={user.user.image.png} alt="amyrobson" />
+                                <img src={img} alt={user.user.username} />
                             </span>
                             <span className="px-5">{user.user.username}</span>
                             <span>{user.createdAt}</span>
@@ -50,7 +53,7 @@ const CommentTemplate=({user,handleShowCon,commentStyle})=>{
                         <span>Reply</span>
                     </div>
                 </div>                   
-            </section>
+            </div>
     )
 
 }
