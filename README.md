@@ -2,7 +2,10 @@
 
 ## Description
 
-A serverless, progressive web application (PWA) with React using a test-driven development (TDD) technique. The application uses the Google Calendar API to fetch upcoming events.
+A fullstack, CRUD app and clone of the comment section of networking webapps like facebook. The user can creat, read, update and delete comments.
+
+Challenged by Frontend mentor. 
+[Click this link to see the coding challenge on frontend mentor](https://www.frontendmentor.io/challenges/interactive-comments-section-iG1RugEG9)
 
 ![screenshot](./screenshot.jpg)
 
