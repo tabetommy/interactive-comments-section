@@ -9,6 +9,11 @@ Challenged by Frontend mentor.
 
 ![screenshot](./screenshot.jpg)
 
+## Stack
+
+- MERN
+- Tailwind CSS
+
 ## Live Demo
 
 [Live Demo Link](https://tabetommy.github.io/interactive-comments-section/)
@@ -30,8 +35,9 @@ Challenged by Frontend mentor.
 
 👤 **Author1**
 
-- Github: [@githubhandle](https://github.com/tabetommy)
-- Linkedin: [linkedin](https://www.linkedin.com/in/tommy-egbe-304464116/)
+- Website : [portfolio](https://tabetommy.github.io/website-portfolio/)
+- Github: [tabetommy](https://github.com/tabetommy)
+- Linkedin: [tabetommy](https://www.linkedin.com/in/tommy-egbe-304464116/)
 
 
 
