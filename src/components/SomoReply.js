@@ -4,6 +4,8 @@ import iconMinus from "../images/icon-minus.svg";
 import iconDelete from "../images/icon-delete.svg";
 import iconEdit from "../images/icon-edit.svg";
 import axios from 'axios';
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
 
 const SomoReply=({usersData, julioResponse, username, handleResponse,somoReplyStyle, img })=>{
     const [count, setCount]=useState(usersData[1].score);
@@ -45,7 +47,8 @@ const SomoReply=({usersData, julioResponse, username, handleResponse,somoReplySt
         .catch(error=>console.log(error))
         setShowUpdateBtn(false);
     }
-
+    
+    dayjs.extend(relativeTime);
     return(
         <div className={somoReplyStyle}>
                     <div className="con-1 hidden md:block w-auto px-3 py-3 mx-4 rounded-lg">
@@ -60,7 +63,7 @@ const SomoReply=({usersData, julioResponse, username, handleResponse,somoReplySt
                                     <img src={img} alt="juliosomo" />
                                 </span>
                                 <span className="px-5">{usersData[1].user.username}</span>
-                                <span>{usersData[1].createdAt}</span>
+                                <span>{dayjs().fromNow()}</span>
                             </div>
                             <div className="hidden md:flex items-center mr-4">
                                 <div className='deleteIcon flex items-center' onClick={handleDelete}>

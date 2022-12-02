@@ -5,6 +5,9 @@ import iconMinus from "../images/icon-minus.svg"
 import iconDelete from "../images/icon-delete.svg";
 import iconEdit from "../images/icon-edit.svg";
 import axios from "axios";
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
+
 
 
 const JulioReplyTemplate=({usersDataThree,reply,handleSetReply, img})=>{
@@ -50,6 +53,8 @@ const JulioReplyTemplate=({usersDataThree,reply,handleSetReply, img})=>{
         setShowUpdateBtn(true);
     }
 
+    dayjs.extend(relativeTime);
+
     return(
         <div className='relative flex justify-end w-4/5 mx-auto mt-9'>
             <div className="absolute inset-y-0 left-0 md:left-16 border-r-2 border-solid border-color1">
@@ -68,7 +73,7 @@ const JulioReplyTemplate=({usersDataThree,reply,handleSetReply, img})=>{
                                     <img src={img} alt="juliosomo" />
                                 </span>
                                 <span className="px-5">{usersDataThree.comments[1].replies[1].user.username}</span>
-                                <span>{usersDataThree.comments[1].replies[1].createdAt}</span>
+                                <span>{dayjs().fromNow()}</span>
                             </div>
                             <div className="hidden md:flex items-center mr-4">
                                 <div className='deleteIcon flex items-center' onClick={handleDelete}>
