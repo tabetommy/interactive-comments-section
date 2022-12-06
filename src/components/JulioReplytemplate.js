@@ -4,19 +4,16 @@ import iconPlus from "../images/icon-plus.svg"
 import iconMinus from "../images/icon-minus.svg"
 import iconDelete from "../images/icon-delete.svg";
 import iconEdit from "../images/icon-edit.svg";
-import axios from "axios";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
+import { DeleteHandler, UpdateHandler } from "./AjaxHandler";
 
 
 
 const JulioReplyTemplate=({usersDataThree,reply,handleSetReply, img})=>{
     const [count1, setCount]=useState(0);
     const [showUpdateBtn, setShowUpdateBtn]=useState(false);
-    // const [updatedComment,setUpdatedComment]=useState("");
     const ref=useRef(null);
-
-    const url=`https://tt-interactive-comments.herokuapp.com/users/${usersDataThree.comments[0].user.username}`
   
     //handle upvoting and downvoting of comment
     const increment1=()=>setCount(prevcount=>prevcount+1);
@@ -27,25 +24,15 @@ const JulioReplyTemplate=({usersDataThree,reply,handleSetReply, img})=>{
     }
     
     const handleUpdate=()=>{
-        const url=`https://tt-interactive-comments.herokuapp.com/users/${usersDataThree.comments[0].user.username}`
-        axios.put(url,{comment:reply})
-        .then(response=>{
-            console.log(response.data);
-        })
-        .catch(error=>console.log(error))
+        //handle update request
+        UpdateHandler(usersDataThree.comments[0].user.username, reply)
         setShowUpdateBtn(false);
         
     }
 
     const handleDelete=()=>{
-        if(window.confirm("Are you sure you want to delete this comment")){
-            axios.delete(url)
-        .then(()=>{
-            console.log("user was succesfully deleted");
-            handleSetReply("")
-        })
-        .catch(error=>console.log('Error' + error)); 
-        }   
+        //handle delete request  
+        DeleteHandler(usersDataThree.comments[0].user.username,handleSetReply)
     }
 
     const handleEditView=()=>{

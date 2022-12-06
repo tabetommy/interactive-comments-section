@@ -1,9 +1,7 @@
 import React,{useState} from "react";
-import axios from "axios";
+import {PostHandler } from "./AjaxHandler";
 
 const ReplyCommentTemplate=({juliosomoImg,username,replyStyle, img})=>{
-
-    const url=`https://tt-interactive-comments.herokuapp.com/users/${username}`;
 
     const [text,setText]=useState(`@${username},`);
 
@@ -14,12 +12,7 @@ const ReplyCommentTemplate=({juliosomoImg,username,replyStyle, img})=>{
 
     const handleSubmit=(event)=>{
         event.preventDefault();
-        axios.post(url,{comment:text})
-        .then((response)=>{
-           console.log( response.data); 
-            window.location.reload();
-        })
-        .catch(error=>console.log(error));
+        PostHandler(username,text)
         
     }
     return(

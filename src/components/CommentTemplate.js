@@ -12,7 +12,6 @@ const CommentTemplate=({user,handleShowCon,commentStyle,img})=>{
     //handle upvoting and downvoting of comment
     const increment=()=>{
         setCount(prevcount=>prevcount+1);
-        console.log(user.user.image.png)
     };
     const decrement=()=>setCount(prevcount=>prevcount-1);
 

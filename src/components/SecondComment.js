@@ -1,11 +1,11 @@
 import React,{useState, useEffect} from "react";
-import axios from 'axios';
 import  "./style.css";
 import CommentTemplate from "./CommentTemplate";
 import ReplyCommentTemplate from "./ReplyCommentTemplate";
 import SecondReplyTemplate from "./SecondReplyTemplate";
 import maxImage from "../images/avatars/image-maxblagun.png";
 import juliuImage from "../images/avatars/image-juliusomo.png";
+import { Gethandler } from "./AjaxHandler";
 
 
 
@@ -15,9 +15,8 @@ const SecondComment=({usersData})=>{
     const [reply, setReply]=useState("");
 
     useEffect(()=>{
-        axios.get(`https://tt-interactive-comments.herokuapp.com/users/${usersData.comments[1].user.username}`)
-        .then(response=>setReply(response.data.comment))
-        .catch(error=>console.log(error));
+        //handle get request
+        Gethandler(usersData.comments[1].user.username, setReply)
         
     },[]);
 

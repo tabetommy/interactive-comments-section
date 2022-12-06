@@ -1,7 +1,8 @@
 import React,{useState} from 'react';
 import  "./style.css";
-import axios from 'axios';
+// import axios from 'axios';
 import juliuImage from "../images/avatars/image-juliusomo.png";
+import { PostHandler } from './AjaxHandler';
 
 const AddComment=({currentUser})=>{  
 
@@ -11,16 +12,17 @@ const AddComment=({currentUser})=>{
     setText(event.target.value)
   }
 
-  const url=`https://tt-interactive-comments.herokuapp.com/users/${currentUser.username}`;
+  // const url=`https://tt-interactive-comments.herokuapp.com/users/${currentUser.username}`;
 
   const handleSubmit=(event)=>{
     event.preventDefault();
-    axios.post(url,{comment:text})
-    .then((response)=>{
-       console.log( response.data); 
-       window.location.reload();
-    })
-    .catch(error=>console.log(error));
+    // axios.post(url,{comment:text})
+    // .then((response)=>{
+    //    console.log( response.data); 
+    //    window.location.reload();
+    // })
+    // .catch(error=>console.log(error));
+    PostHandler(currentUser.username,text)
     }
 
     return(

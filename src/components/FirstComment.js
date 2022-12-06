@@ -2,9 +2,9 @@ import React,{useState, useEffect} from "react";
 import ReplyCommentTemplate from "./ReplyCommentTemplate";
 import CommentTemplate from "./CommentTemplate";
 import JulioReplyTemplate from "./JulioReplytemplate";
-import axios from "axios";
 import amyImage from "../images/avatars/image-amyrobson.png";
 import juliuImage from "../images/avatars/image-juliusomo.png";
+import { Gethandler } from "./AjaxHandler";
 
 
 
@@ -15,9 +15,8 @@ const FirstComment=({usersData})=>{
     const [reply, setReply]=useState("");
 
     useEffect(()=>{
-        axios.get(`https://tt-interactive-comments.herokuapp.com/users/${usersData.comments[0].user.username}`)
-        .then(response=>setReply(response.data.comment))
-        .catch(error=>console.log(error));
+        // handle get request
+        Gethandler(usersData.comments[0].user.username, setReply)
     },[]);
 
      //show the reply container
