@@ -60,6 +60,7 @@ const JulioReplyTemplate=({usersDataThree,reply,handleSetReply, img})=>{
                                     <img src={img} alt="juliosomo" />
                                 </span>
                                 <span className="px-5">{usersDataThree.comments[1].replies[1].user.username}</span>
+                                <span className='you-con'>You</span>
                                 <span>{dayjs().fromNow()}</span>
                             </div>
                             <div className="hidden md:flex items-center mr-4">

@@ -52,6 +52,7 @@ const SomoReply=({usersData, julioResponse, username, handleResponse,somoReplySt
                                     <img src={img} alt="juliosomo" />
                                 </span>
                                 <span className="px-5">{usersData[1].user.username}</span>
+                                <span className='you-con'>You</span>
                                 <span>{dayjs().fromNow()}</span>
                             </div>
                             <div className="hidden md:flex items-center mr-4">
